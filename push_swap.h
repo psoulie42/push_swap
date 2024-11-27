@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:21:01 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:21:24 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/11/27 10:35:48 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "libft/libft.h"
 
-void	check(t_list a);
+void	check(t_list *a);
 
 #endif
