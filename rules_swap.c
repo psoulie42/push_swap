@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   rules_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:34:53 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:10:53 by psoulie          ###   ########.fr       */
+/*   Created: 2024/11/27 09:49:36 by psoulie           #+#    #+#             */
+/*   Updated: 2024/11/27 10:20:26 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check(t_list *a)
+t_list	*sa(t_list *first)
 {
-	t_list	*iter;
-	
-	while (a)
-	{
-		iter = a;
-		while (iter)
-		{
-			iter = iter->next;
-			if (iter->content == a->content)
-			{
-				ft_putstr_fd("Error\n", 3);
-				exit(EXIT_FAILURE);
-			}
-		}
-		if (a->content < -2147483648 || a->content > 2147483647)
-		{
-			ft_putstr_fd(3, "Error\n");
-				exit(EXIT_FAILURE);
-		}
-		a = a->next;
-	}
+	t_list	*swap;
 
-	return ;
+	swap = first;
+	first = first->next;
+	swap->next = first;
+	return (swap);
+}
+
+void main()
+{
+	t_list *first = ft_lstnew(1);
+	t_list *second = ft_lstnew(2);
+
+	ft_lstadd_back(&first, second);
+	sa(first);
+	printf("%d%d\n", first->content, second->content);
 }

@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:34:53 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:10:53 by psoulie          ###   ########.fr       */
+/*   Created: 2024/10/09 12:56:04 by psoulie           #+#    #+#             */
+/*   Updated: 2024/10/10 15:08:57 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check(t_list *a)
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_list	*iter;
-	
-	while (a)
-	{
-		iter = a;
-		while (iter)
-		{
-			iter = iter->next;
-			if (iter->content == a->content)
-			{
-				ft_putstr_fd("Error\n", 3);
-				exit(EXIT_FAILURE);
-			}
-		}
-		if (a->content < -2147483648 || a->content > 2147483647)
-		{
-			ft_putstr_fd(3, "Error\n");
-				exit(EXIT_FAILURE);
-		}
-		a = a->next;
-	}
+	int	i;
 
-	return ;
+	i = 0;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		n += 48;
+		write(fd, &n, 1);
+	}
 }
+
+/* int main()
+{
+	ft_putnbr_fd(-2147483648, 1);
+	write(1, "\n", 1);
+} */

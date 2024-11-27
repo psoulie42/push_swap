@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:34:53 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:10:53 by psoulie          ###   ########.fr       */
+/*   Created: 2024/10/02 14:29:57 by psoulie           #+#    #+#             */
+/*   Updated: 2024/10/03 15:10:19 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
+//#include <strings.h>
 
-void	check(t_list *a)
+void	ft_bzero(void *s, size_t n)
 {
-	t_list	*iter;
-	
-	while (a)
-	{
-		iter = a;
-		while (iter)
-		{
-			iter = iter->next;
-			if (iter->content == a->content)
-			{
-				ft_putstr_fd("Error\n", 3);
-				exit(EXIT_FAILURE);
-			}
-		}
-		if (a->content < -2147483648 || a->content > 2147483647)
-		{
-			ft_putstr_fd(3, "Error\n");
-				exit(EXIT_FAILURE);
-		}
-		a = a->next;
-	}
+	size_t	i;
 
-	return ;
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
 }
+
+/* int main()
+{
+	int n = 3;
+	char a[15];
+	ft_bzero(a, n);
+	printf("%s\n", a);
+} */

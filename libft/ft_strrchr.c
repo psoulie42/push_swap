@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:34:53 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:10:53 by psoulie          ###   ########.fr       */
+/*   Created: 2024/10/02 11:46:14 by psoulie           #+#    #+#             */
+/*   Updated: 2024/10/10 16:46:25 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check(t_list *a)
+char	*ft_strrchr(const char *str, int c)
 {
-	t_list	*iter;
-	
-	while (a)
-	{
-		iter = a;
-		while (iter)
-		{
-			iter = iter->next;
-			if (iter->content == a->content)
-			{
-				ft_putstr_fd("Error\n", 3);
-				exit(EXIT_FAILURE);
-			}
-		}
-		if (a->content < -2147483648 || a->content > 2147483647)
-		{
-			ft_putstr_fd(3, "Error\n");
-				exit(EXIT_FAILURE);
-		}
-		a = a->next;
-	}
+	int		i;
+	char	cc;
 
-	return ;
+	cc = c;
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
+	{
+		if (str[i] == cc)
+			return ((char *)&str[i]);
+		i--;
+	}
+	return (NULL);
 }
+
+/* int main()
+{
+	char str[] = "yowwo";
+	printf("%s\n", ft_strrchr(str, 'w'));
+} */

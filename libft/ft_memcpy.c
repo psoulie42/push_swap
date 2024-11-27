@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:34:53 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:10:53 by psoulie          ###   ########.fr       */
+/*   Created: 2024/10/02 15:09:18 by psoulie           #+#    #+#             */
+/*   Updated: 2024/10/10 15:22:56 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check(t_list *a)
+void	*ft_memcpy(void	*dst, const void *src, size_t n)
 {
-	t_list	*iter;
-	
-	while (a)
-	{
-		iter = a;
-		while (iter)
-		{
-			iter = iter->next;
-			if (iter->content == a->content)
-			{
-				ft_putstr_fd("Error\n", 3);
-				exit(EXIT_FAILURE);
-			}
-		}
-		if (a->content < -2147483648 || a->content > 2147483647)
-		{
-			ft_putstr_fd(3, "Error\n");
-				exit(EXIT_FAILURE);
-		}
-		a = a->next;
-	}
+	size_t	i;
 
-	return ;
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dst);
 }
+
+/* int main()
+{
+	char src[] = "hellooo ca va";
+	char dst[3];
+	ft_memcpy(dst, src, 3);
+	printf("%s\n", dst);
+} */
