@@ -6,12 +6,12 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2024/11/27 11:00:47 by psoulie          ###   ########.fr        #
+#    Updated: 2024/11/27 16:31:06 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES =	check			\
-		rules_swap		\
+		rules/swap		\
 
 LIB = 	ft_atoi			\
 		ft_bzero		\
@@ -29,8 +29,6 @@ LIB = 	ft_atoi			\
 		ft_memset		\
 		ft_putchar_fd	\
 		ft_putendl_fd	\
-		ft_putnbr_fd	\
-		ft_putstr_fd	\
 		ft_putnbr_fd	\
 		ft_putstr_fd	\
 		ft_split		\
@@ -54,24 +52,20 @@ LIB = 	ft_atoi			\
 		ft_lstsize		\
 		ft_lstlast		\
 		ft_lstadd_back	\
-		ft_lstdelone	\
-		ft_lstclear		\
-		ft_lstiter		\
-		ft_lstmap		\
 
 SRCS = $(addsuffix .c, $(FILES))
 LIBSRCS = $(addprefix ./libft/, $(addsuffix .c, $(LIB)))
-OFILES = $(SRCS:=.o) $(LIBSRCS:=.o)
+OFILES = $(SRCS:.c=.o) $(LIBSRCS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = push_swap
+NAME = ps.a
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
+	ar rcs $(NAME) $(OFILES)
 
 clean:
 	rm -f $(OFILES)

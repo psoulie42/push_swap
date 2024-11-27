@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:07:45 by psoulie           #+#    #+#             */
-/*   Updated: 2024/10/09 16:42:07 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/11/27 11:50:50 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
-			return ((void *)&s[i]);
+			return ((void *)s + i);
 		i++;
 	}
 	return (NULL);

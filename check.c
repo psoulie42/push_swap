@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:34:53 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 10:28:05 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:03:42 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	check(t_list *a)
 				exit(EXIT_FAILURE);
 			}
 		}
-		if (a->content < -2147483648 || a->content > 2147483647)
+		/* if (a->content < -2147483648 || a->content > 2147483647)
 		{
 			ft_putstr_fd(3, "Error\n");
 				exit(EXIT_FAILURE);
-		}
+		} */
 		a = a->next;
 	}
 	return ;
