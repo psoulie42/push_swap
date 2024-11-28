@@ -6,7 +6,7 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2024/11/27 17:03:34 by psoulie          ###   ########.fr        #
+#    Updated: 2024/11/28 10:17:12 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,10 +53,20 @@ LIB = 	ft_atoi			\
 		ft_lstsize		\
 		ft_lstlast		\
 		ft_lstadd_back	\
+		
+PRINTF =ft_printf		\
+		ft_countargs	\
+		ft_putcharn		\
+		ft_putstrn		\
+		ft_putnbrn		\
+		ft_putunbrn		\
+		ft_putnbrhexn	\
+		ft_putptrn		\
 
 SRCS = $(addsuffix .c, $(FILES))
 LIBSRCS = $(addprefix ./libft/, $(addsuffix .c, $(LIB)))
-OFILES = $(SRCS:.c=.o) $(LIBSRCS:.c=.o)
+PSRCS = $(addprefix ./libft/ft_printf/, $(addsuffix .c, $(PRINTF)))
+OFILES = $(SRCS:.c=.o) $(LIBSRCS:.c=.o) $(PSRCS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

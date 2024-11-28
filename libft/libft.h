@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:09:38 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 13:43:17 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/11/28 10:12:55 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
@@ -37,7 +38,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memset(void *ptr, int val, size_t n);
 
 int		ft_isalnum(int a);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		ft_isalpha(int a);
 int		ft_isascii(int a);
 int		ft_isdigit(int i);

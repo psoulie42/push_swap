@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:30:19 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 09:44:00 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/11/28 09:35:06 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	isminus(char a)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int	i;
 	int	neg;

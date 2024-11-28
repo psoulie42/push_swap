@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 09:49:36 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/27 17:04:38 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/11/28 10:11:47 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ void	swap(t_list **stack)
 void	sa(t_list *a)
 {
 	swap(&a);
-	ft_putstr_fd("sa\n", 1);
+	ft_printf("sa\n");
 }
 
 void	sb(t_list *b)
 {
 	swap(&b);
-	ft_putstr_fd("sa\n", 1);
+	ft_printf("sa\n");
 }
 
 void	ss(t_list *a, t_list *b)
 {
 	swap(&a);
 	swap(&b);
-	ft_putstr_fd("ss\n", 1);
+	ft_printf("ss\n");
 }
