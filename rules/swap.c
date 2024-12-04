@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 09:49:36 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/28 10:11:47 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/12/04 17:05:52 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,18 @@ void	swap(t_list **stack)
 	return ;
 }
 
-void	sa(t_list *a)
+void	sab(t_list **a, char c)
 {
-	swap(&a);
-	ft_printf("sa\n");
+	swap(a);
+	if (c == 'a')
+		ft_printf("sa\n");
+	else
+		ft_printf("sb\n");
 }
 
-void	sb(t_list *b)
+void	ss(t_list **a, t_list **b)
 {
-	swap(&b);
-	ft_printf("sa\n");
-}
-
-void	ss(t_list *a, t_list *b)
-{
-	swap(&a);
-	swap(&b);
+	swap(a);
+	swap(b);
 	ft_printf("ss\n");
 }

@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:09:38 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/28 10:12:55 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/12/04 16:51:13 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }				t_list;
 

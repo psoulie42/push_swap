@@ -6,13 +6,15 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2024/11/28 10:17:12 by psoulie          ###   ########.fr        #
+#    Updated: 2024/12/04 16:54:31 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES =	check			\
-		rules/swap		\
-		rules/push		\
+FILES =	check				\
+		rules/swap			\
+		rules/push			\
+		rules/rotate_code	\
+		rules/rotate_rules	\
 
 LIB = 	ft_atoi			\
 		ft_bzero		\
