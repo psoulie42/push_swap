@@ -12,52 +12,6 @@
 
 #include "push_swap.h"
 
-static void	case1(t_list **a)
-{
-	sab(a, 'a');
-	rrab(a, 'a');
-}
-
-static void	case2(t_list **a)
-{
-	rab(a, 'a');
-	sab(a, 'a');
-	rrab(a, 'a');
-}
-
-static char	*findorder(t_list **a)
-{
-	char	*order;
-	int		t;
-	int		i;
-	int		swap;
-	t_list	*tmp;
-
-	i = 0;
-	swap = 0;
-	tmp = *a;
-	order = malloc(4);
-	order = "123";
-	while (1)
-	{
-		tmp = *a;
-		while (tmp->next)
-		{
-			if (tmp->next->content > tmp->content)
-			{
-				t = order[i];
-				order[i] = order[i + 1];
-				order[i + 1] = t;
-				swap = 1;
-			}
-			tmp = tmp->next;
-		}
-		if (!swap)
-			break ;
-	}
-	return (order);
-}
-
 void	microsort(t_list **a)
 {
 	t_list	*first;
@@ -75,29 +29,24 @@ void	minisort(t_list **a)
 
 	first = *a;
 	second = first->next;
-	if (second->next == NULL)
-		return (microsort(a));
-	third = second->next;
-	third->next = NULL;
-	order = findorder(a);
-	if (ft_strncmp(order, "123", 3) == 0)
-		return (case1(a));
-	if (ft_strncmp(order, "312", 3) == 0)
-		return (rab(a, 'a'));
-	if (ft_strncmp(order, "213", 3) == 0)
-		return (sab(a, 'a'));
-	if (ft_strncmp(order, "231", 3) == 0)
-		return (rrab(a, 'a'));
-	if (ft_strncmp(order, "132", 3) == 0)
-		return (case2(a));
+	if (second->next)
+	{
+		third = second->next;
+		third->next = NULL;
+	}
+	if (first->content > second->content && first->content >= third->content)
+		rab(a, 'a');
+	else if (second->content >= first->content && second->content > third->content)
+		rrab(a, 'a');
+	return (microsort(a));
 }
 
 int	main()
 {
-	t_list	*stack = ft_lstnew(1);
+	t_list	*stack = ft_lstnew(3);
 	
-	stack->next = ft_lstnew(2);
-	stack->next->next = ft_lstnew(3);
+	stack->next = ft_lstnew(3);
+	stack->next->next = ft_lstnew(1);
 	stack->next->next->next = NULL;
 	minisort(&stack);
 	while (stack->next)
