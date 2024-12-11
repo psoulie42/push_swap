@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bruteforce.c                                       :+:      :+:    :+:   */
+/*   minisort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:49:14 by psoulie           #+#    #+#             */
-/*   Updated: 2024/12/04 17:12:54 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/12/11 09:44:45 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,21 @@ void	minisort(t_list **a)
 	{
 		third = second->next;
 		third->next = NULL;
+		if (first->content > second->content && first->content >= third->content)
+			rab(a, 'a');
+		else if (second->content >= first->content && second->content > third->content)
+			rrab(a, 'a');
 	}
-	if (first->content > second->content && first->content >= third->content)
-		rab(a, 'a');
-	else if (second->content >= first->content && second->content > third->content)
-		rrab(a, 'a');
 	return (microsort(a));
 }
 
-/* int	main()
+int	main()
 {
-	t_list	*stack = ft_lstnew(3);
+	t_list	*stack = ft_lstnew(4);
 	
 	stack->next = ft_lstnew(3);
-	stack->next->next = ft_lstnew(1);
-	stack->next->next->next = NULL;
+	stack->next->next = NULL;
+	//stack->next->next->next = NULL;
 	minisort(&stack);
 	while (stack->next)
 	{
@@ -55,4 +55,4 @@ void	minisort(t_list **a)
 		stack = stack->next;
 	}
 	ft_printf("%d\n", stack->content);
-} */
+}

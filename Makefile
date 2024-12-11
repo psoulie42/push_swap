@@ -6,12 +6,11 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2024/12/04 16:54:31 by psoulie          ###   ########.fr        #
+#    Updated: 2024/12/11 11:41:24 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES =	check				\
-		rules/swap			\
+FILES =	rules/swap			\
 		rules/push			\
 		rules/rotate_code	\
 		rules/rotate_rules	\

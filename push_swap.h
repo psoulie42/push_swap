@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:21:01 by psoulie           #+#    #+#             */
-/*   Updated: 2024/12/04 17:07:21 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/12/11 11:37:14 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 
+int		stacklen(t_list *stack);
 void	check(t_list *a);
 void	swap(t_list **stack);
 void	sab(t_list **a, char c);
@@ -30,5 +31,6 @@ void	rr(t_list **a, t_list **b);
 void	rrr(t_list **a, t_list **b);
 void	minisort(t_list **a);
 void	microsort(t_list **a);
+void	findindex(t_list **stack);
 
 #endif
