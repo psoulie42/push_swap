@@ -20,6 +20,7 @@ void	check(t_list *a);
 void	swap(t_list **stack);
 void	sab(t_list **a, char c);
 void	ss(t_list **a, t_list **b);
+void	firstpush(t_list **stack1, t_list **stack2);
 void	push(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
@@ -32,5 +33,8 @@ void	rrr(t_list **a, t_list **b);
 void	minisort(t_list **a);
 void	microsort(t_list **a);
 void	findindex(t_list **stack);
+void	littlesort(t_list **a_stack, t_list **b_stack);
+void	getnode(t_list **a_stack, t_list **b_stack, int index, int size);
+void	pushi(t_list **a_stack, t_list **b_stack, int index, int mode);
 
 #endif

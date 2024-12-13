@@ -10,7 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-FILES =	rules/swap			\
+FILES =	minisort			\
+		littlesort			\
+		rules/swap			\
 		rules/push			\
 		rules/rotate_code	\
 		rules/rotate_rules	\
@@ -72,12 +74,12 @@ OFILES = $(SRCS:.c=.o) $(LIBSRCS:.c=.o) $(PSRCS:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = ps.a
+NAME = push_swap
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	ar rcs $(NAME) $(OFILES)
+	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
 
 clean:
 	rm -f $(OFILES)

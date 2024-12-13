@@ -12,11 +12,23 @@
 
 #include "../push_swap.h"
 
+void	firstpush(t_list **stack1, t_list **stack2)
+{
+	t_list	*head1;
+
+	head1 = *stack1;
+	*stack1 = head1->next;
+	head1->next = NULL;
+	*stack2 = head1;
+}
+
 void	push(t_list **stack1, t_list **stack2)
 {
 	t_list	*head1;
 	t_list	*head2;
 
+	if (!stack2)
+		return (firstpush(stack1, stack2));
 	head1 = *stack1;
 	if (!head1)
 		return ;

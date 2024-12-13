@@ -25,7 +25,6 @@ void	minisort(t_list **a)
 	t_list	*first;
 	t_list	*second;
 	t_list	*third;
-	char	*order;
 
 	first = *a;
 	second = first->next;
@@ -41,7 +40,7 @@ void	minisort(t_list **a)
 	return (microsort(a));
 }
 
-int	main()
+/* int	main()
 {
 	t_list	*stack = ft_lstnew(4);
 	
@@ -55,4 +54,4 @@ int	main()
 		stack = stack->next;
 	}
 	ft_printf("%d\n", stack->content);
-}
+} */
