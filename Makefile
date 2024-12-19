@@ -6,12 +6,14 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2024/12/11 11:41:24 by psoulie          ###   ########.fr        #
+#    Updated: 2024/12/19 15:34:19 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES =	minisort			\
 		littlesort			\
+		bigsort				\
+		pusher				\
 		rules/swap			\
 		rules/push			\
 		rules/rotate_code	\

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insertsort.c                                       :+:      :+:    :+:   */
+/*   littlesort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 09:48:59 by psoulie           #+#    #+#             */
-/*   Updated: 2024/12/11 11:45:52 by psoulie          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:34:15 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,15 +110,17 @@ int	main(int ac, char **av)
 	}
 	stack->next = NULL;
 	stack = save;
-	if (ac <= 4)
+	/* if (ac <= 4)
 		minisort(&stack);
-	else
+	else if (ac <= 50)
 		littlesort(&stack, &stackb);
-	/* while (stack->next)
+	else */
+		bigsort(&stack, &stackb);
+	while (stack->next)
 	{
 		ft_printf("%i -> %i\n", stack->content, stack->index);
 		stack = stack->next;
 	}
-	ft_printf("%i -> %i\n", stack->content, stack->index); */
+	ft_printf("%i -> %i\n", stack->content, stack->index);
 	return (0);
 }
