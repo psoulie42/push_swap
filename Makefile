@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-FILES =	minisort			\
+FILES =	main				\
+		minisort			\
 		littlesort			\
 		bigsort				\
 		pusher				\

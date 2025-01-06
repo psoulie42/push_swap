@@ -18,11 +18,11 @@ void	refis1(t_list **a, t_list **b, int ref)
 	int		check;
 	int		i;
 
-	iter = *a;
 	i = 0;
-	while (1)
+	while (*b)
 	{
 		check = 0;
+		iter = *b;
 		while (iter)
 		{
 			if (iter->index & ref)
@@ -44,11 +44,12 @@ void	refis0(t_list **a, t_list **b, int ref)
 	int		check;
 	int		i;
 
-	iter = *b;
 	i = 0;
-	while (1)
+	while (*a)
 	{
 		check = 0;
+		iter = *a;
+		printf("conrent is %i\nnext conitent is %i\n", (*a)->content, (*a)->next->content);
 		while (iter)
 		{
 			if (!(iter->index & ref))
@@ -95,17 +96,22 @@ int	correctindices(t_list **a, t_list **b)
 void	bigsort(t_list **a, t_list **b)
 {
 	int	ref;
+	t_list *stack;
 
 	ref = 1;
+	findindex(a);
 	while (1)
 	{
 		if (correctindices(a, b))
 		{
+			ft_printf("yeeess\n");
 			pushall(a, b);
 			break ;
 		}
 		refis1(a, b, ref);
 		refis0(a, b, ref);
-		ref <<= 1;
+		ft_printf("still alive\n");
+		ref = ref << 1;
+		stack = *a;
 	}
 }

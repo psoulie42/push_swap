@@ -14,30 +14,36 @@
 
 void	a_pushthatone(t_list **a, t_list **b, int index, int i)
 {
-	while ((*a)->index != index)
+	if (*a)
 	{
-		if (i <= ft_lstsize(*a) / 2)
-			rab(a, 'a');
-		else	
-			rrab(a, 'a');
+		while ((*a)->index != index)
+		{
+			if (i <= ft_lstsize(*a) / 2)
+				rab(a, 'a');
+			else	
+				rrab(a, 'a');
+		}
+		pa(a, b);
 	}
-	pa(a, b);
 }
 
 void	b_pushthatone(t_list **a, t_list **b, int index, int i)
 {
-	while ((*b)->index != index)
+	if (*b)
 	{
-		if (i <= ft_lstsize(*b) / 2)
-			rab(b, 'b');
-		else	
-			rrab(b, 'b');
+		while ((*b)->index != index)
+		{
+			if (i <= ft_lstsize(*b) / 2)
+				rab(b, 'b');
+			else	
+				rrab(b, 'b');
+		}
+		pb(a, b);
 	}
-	pb(a, b);
 }
 
 void	pushall(t_list **a, t_list **b)
 {
-	while (b)
+	while (*b)
 		pb(a, b);
 }
