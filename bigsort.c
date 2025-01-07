@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:00:31 by psoulie           #+#    #+#             */
-/*   Updated: 2024/12/19 15:34:10 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/07 11:26:14 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	refis1(t_list **a, t_list **b, int ref)
 			{
 				check = 1;
 				b_pushthatone(a, b, iter->index, i);
+				break ;
 			}
 			iter = iter->next;
 			i++;
@@ -49,13 +50,13 @@ void	refis0(t_list **a, t_list **b, int ref)
 	{
 		check = 0;
 		iter = *a;
-		printf("conrent is %i\nnext conitent is %i\n", (*a)->content, (*a)->next->content);
 		while (iter)
 		{
 			if (!(iter->index & ref))
 			{
 				check = 1;
 				a_pushthatone(a, b, iter->index, i);
+				break ;
 			}
 			iter = iter->next;
 			i++;
@@ -96,22 +97,18 @@ int	correctindices(t_list **a, t_list **b)
 void	bigsort(t_list **a, t_list **b)
 {
 	int	ref;
-	t_list *stack;
 
 	ref = 1;
 	findindex(a);
 	while (1)
 	{
-		if (correctindices(a, b))
+		if (correctindices(a, b) || ref > 255)
 		{
-			ft_printf("yeeess\n");
 			pushall(a, b);
-			break ;
+			return ;
 		}
 		refis1(a, b, ref);
 		refis0(a, b, ref);
-		ft_printf("still alive\n");
 		ref = ref << 1;
-		stack = *a;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2024/12/19 15:34:19 by psoulie          ###   ########.fr        #
+#    Updated: 2025/01/07 10:48:26 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ PSRCS = $(addprefix ./libft/ft_printf/, $(addsuffix .c, $(PRINTF)))
 OFILES = $(SRCS:.c=.o) $(LIBSRCS:.c=.o) $(PSRCS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 NAME = push_swap
 

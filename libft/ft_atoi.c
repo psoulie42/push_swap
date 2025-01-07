@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:30:19 by psoulie           #+#    #+#             */
-/*   Updated: 2024/11/28 09:35:06 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/07 10:21:33 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long	ft_atoi(const char *str)
 	int	res;
 
 	i = 0;
+	neg = 0;
 	if (ftstrncmp(str, "2147483647", 10) == 0)
 		return (2147483647);
 	if (str[i] == '-' || str[i] == '+')
