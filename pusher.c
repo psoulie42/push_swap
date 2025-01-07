@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:13:00 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 10:43:23 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/07 15:14:42 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	a_pushthatone(t_list **a, t_list **b, int index, int i)
 			else	
 				rrab(a, 'a');
 		}
-		pa(a, b);
+		pb(a, b);
 	}
 }
 
@@ -38,12 +38,12 @@ void	b_pushthatone(t_list **a, t_list **b, int index, int i)
 			else	
 				rrab(b, 'b');
 		}
-		pb(a, b);
+		pa(a, b);
 	}
 }
 
 void	pushall(t_list **a, t_list **b)
 {
 	while (*b)
-		pb(a, b);
+		pa(a, b);
 }

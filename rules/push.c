@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:39:21 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 10:43:36 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/07 15:15:22 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	push(t_list **stack1, t_list **stack2)
 
 void	pa(t_list **a, t_list **b)
 {
-	push(a, b);
+	push(b, a);
 	ft_printf("pa\n");
 }
 
 void	pb(t_list **a, t_list **b)
 {
-	push(b, a);
+	push(a, b);
 	ft_printf("pb\n");
 }
 

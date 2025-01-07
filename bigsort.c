@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:00:31 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 11:26:14 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/07 15:05:23 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,14 +100,11 @@ void	bigsort(t_list **a, t_list **b)
 
 	ref = 1;
 	findindex(a);
-	while (1)
+	while (ref <= 128)
 	{
-		if (correctindices(a, b) || ref > 255)
-		{
-			pushall(a, b);
+		if (correctindices(a, b))
 			return ;
-		}
-		refis1(a, b, ref);
+		pushall(a, b);
 		refis0(a, b, ref);
 		ref = ref << 1;
 	}
