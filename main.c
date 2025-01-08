@@ -6,11 +6,38 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:43:03 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 15:20:03 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/08 16:50:38 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	findbits(int fatdec)
+{
+	int	fatbit;
+
+	fatbit = 0;
+	while (fatdec > 0)
+	{
+		fatdec >>= 1;
+		fatbit++;
+	}
+	return (fatbit);
+}
+
+int	findbiggest(t_list *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		if (stack->index > i)
+			i = stack->index;
+		stack = stack->next;
+	}
+	return (i);
+}
 
 int	main(int ac, char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:21:01 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 10:43:20 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/08 15:50:22 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 int		stacklen(t_list *stack);
 int		correctindices(t_list **a, t_list **b);
+int		findbiggest(t_list *stack);
+int		findbits(int fatdec);
 void	check(t_list *a);
 void	swap(t_list **stack);
 void	sab(t_list **a, char c);

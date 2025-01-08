@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 09:48:59 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 10:43:10 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/08 15:41:08 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	pushi(t_list **a_stack, t_list **b_stack, int index, int mode)
 		else
 			rrab(a_stack, 'a');
 	}
-	pa(a_stack, b_stack);
+	pb(a_stack, b_stack);
 }
 
 void	getnode(t_list **a_stack, t_list **b_stack, int index, int size)
@@ -86,7 +86,7 @@ void	littlesort(t_list **a_stack, t_list **b_stack)
 	}
 	while (index)
 	{
-		pb(a_stack, b_stack);
+		pa(a_stack, b_stack);
 		index--;
 	}
 }
