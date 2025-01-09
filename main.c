@@ -6,37 +6,22 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:43:03 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/08 16:50:38 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/09 16:22:24 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	findbits(int fatdec)
+void	freeall(t_list *stack)
 {
-	int	fatbit;
+	t_list *freed;
 
-	fatbit = 0;
-	while (fatdec > 0)
-	{
-		fatdec >>= 1;
-		fatbit++;
-	}
-	return (fatbit);
-}
-
-int	findbiggest(t_list *stack)
-{
-	int	i;
-
-	i = 0;
 	while (stack)
 	{
-		if (stack->index > i)
-			i = stack->index;
+		freed = stack;
 		stack = stack->next;
+		free(freed);
 	}
-	return (i);
 }
 
 int	main(int ac, char **av)
@@ -58,17 +43,19 @@ int	main(int ac, char **av)
 	}
 	stack->next = NULL;
 	stack = save;
-	/* if (ac <= 4)
+	if (ac <= 4)
 		minisort(&stack);
 	else if (ac <= 50)
 		littlesort(&stack, &stackb);
-	else */
-		bigsort(&stack, &stackb);/* 
+	else
+		bigsort(&stack, &stackb);
+	freeall(stack);
+	/* 
 	while (stack->next)
 	{
-		ft_printf("%i -> %i\n", stack->content, stack->index);
+		ft_printf("%i\n", stack->index);
 		stack = stack->next;
 	}
-	ft_printf("%i -> %i\n", stack->content, stack->index); */
+	ft_printf("%i\n", stack->index); */
 	return (0);
 }

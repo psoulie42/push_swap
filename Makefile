@@ -6,7 +6,7 @@
 #    By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 11:38:24 by psoulie           #+#    #+#              #
-#    Updated: 2025/01/07 10:48:26 by psoulie          ###   ########.fr        #
+#    Updated: 2025/01/09 14:05:01 by psoulie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ FILES =	main				\
 		minisort			\
 		littlesort			\
 		bigsort				\
+		bigsort_utils		\
 		pusher				\
 		rules/swap			\
 		rules/push			\
