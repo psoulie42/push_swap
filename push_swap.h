@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:21:01 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/08 15:50:22 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 10:39:50 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	minisort(t_list **a);
 void	microsort(t_list **a);
 void	findindex(t_list **stack);
 void	littlesort(t_list **a_stack, t_list **b_stack);
-void	getnode(t_list **a_stack, t_list **b_stack, int index, int size);
+void	getnode(t_list **a_stack, t_list **b_stack, int index);
 void	pushi(t_list **a_stack, t_list **b_stack, int index, int mode);
 void	bigsort(t_list **a, t_list **b);
 void	refis0(t_list **a, t_list **b, int ref);

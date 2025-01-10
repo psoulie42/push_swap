@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:49:14 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 10:43:17 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 11:31:01 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,3 @@ void	minisort(t_list **a)
 	}
 	return (microsort(a));
 }
-
-/* int	main()
-{
-	t_list	*stack = ft_lstnew(4);
-	
-	stack->next = ft_lstnew(3);
-	stack->next->next = NULL;
-	//stack->next->next->next = NULL;
-	minisort(&stack);
-	while (stack->next)
-	{
-		ft_printf("%d\n", stack->content);
-		stack = stack->next;
-	}
-	ft_printf("%d\n", stack->content);
-} */
