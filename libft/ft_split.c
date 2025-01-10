@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 13:35:54 by psoulie           #+#    #+#             */
-/*   Updated: 2024/10/10 12:22:46 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 14:44:23 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,12 @@ char	**ft_split(const char *str, char c)
 	size_t	nbstr;
 	char	**spliff;
 
-	spliff = malloc((count((char *)str, c) + 1) * sizeof(char *));
+	spliff = malloc((count((char *)str, c) + 2) * sizeof(char *));
 	if (!spliff)
 		return (NULL);
+	spliff[0] = "./push_swap";
 	i = 0;
-	nbstr = 0;
+	nbstr = 1;
 	while (str[i])
 	{
 		if (str[i] != c)

@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:00:31 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/10 10:33:44 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:04:21 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	bigsort(t_list **a, t_list **b)
 
 	i = 0;
 	ref = 1;
-	findindex(a);
 	bigindex = findbiggest(*a);
 	bigbit = findbits(bigindex);
 	while (i < bigbit)

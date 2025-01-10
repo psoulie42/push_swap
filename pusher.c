@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:13:00 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 15:14:42 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:26:26 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	a_pushthatone(t_list **a, t_list **b, int index, int i)
 		{
 			if (i <= ft_lstsize(*a) / 2)
 				rab(a, 'a');
-			else	
+			else
 				rrab(a, 'a');
 		}
 		pb(a, b);
@@ -35,7 +35,7 @@ void	b_pushthatone(t_list **a, t_list **b, int index, int i)
 		{
 			if (i <= ft_lstsize(*b) / 2)
 				rab(b, 'b');
-			else	
+			else
 				rrab(b, 'b');
 		}
 		pa(a, b);

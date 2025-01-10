@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:21:01 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/10 10:39:50 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:15:42 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 # include "libft/libft.h"
 
 int		stacklen(t_list *stack);
-int		correctindices(t_list **a, t_list **b);
+int		tablen(char **tab);
+int		correctindices(t_list *a);
 int		findbiggest(t_list *stack);
 int		findbits(int fatdec);
-void	check(t_list *a);
+int		check(int ac, char **av);
 void	swap(t_list **stack);
 void	sab(t_list **a, char c);
 void	ss(t_list **a, t_list **b);
@@ -45,5 +46,8 @@ void	refis1(t_list **a, t_list **b, int ref);
 void	a_pushthatone(t_list **a, t_list **b, int index, int i);
 void	b_pushthatone(t_list **a, t_list **b, int index, int i);
 void	pushall(t_list **a, t_list **b);
+void	freeall(t_list *stack, int spleet, char **tab);
+void	invalid(void);
+void	sort(int ac, t_list **a, t_list **b);
 
 #endif

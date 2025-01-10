@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:30:19 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/07 10:21:33 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 13:37:41 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int	isminus(char a)
 
 long	ft_atoi(const char *str)
 {
-	int	i;
-	int	neg;
-	int	res;
+	int		i;
+	int		neg;
+	long	res;
 
 	i = 0;
 	neg = 0;
@@ -51,18 +51,18 @@ long	ft_atoi(const char *str)
 		res += (str[i] - 48);
 		i++;
 	}
-	if (str[i])
+	if (neg == 1)
+		res *= -1;
+	if (str[i] || res < -2147483648 || res > 2147483647)
 	{
 		ft_putstr_fd("Error\n", 2);
 		exit(EXIT_FAILURE);
 	}
-	if (neg == 1)
-		res *= -1;
 	return (res);
 }
 
 /* int main()
 {
-	char str[] = "   -3277365";
-	printf("%d\n", ft_atoi(str));
+	char str[] = "2147483647";
+	printf("%ld\n", ft_atoi(str));
 } */

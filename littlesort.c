@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 09:48:59 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/10 10:48:02 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:22:55 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	findindex(t_list **stack)
 				break ;
 			else if (iter == save)
 				iter = iter->next;
-			if (iter->content < save->content ||
-				(iter->content == save->content && iter < save))
+			if (iter->content < save->content
+				|| (iter->content == save->content && iter < save))
 				index++;
 			iter = iter->next;
 		}
@@ -78,7 +78,6 @@ void	littlesort(t_list **a_stack, t_list **b_stack)
 	int		index;
 	int		size;
 
-	findindex(a_stack);
 	index = 0;
 	size = stacklen(*a_stack);
 	while (index < size - 3)

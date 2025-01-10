@@ -6,7 +6,7 @@
 /*   By: psoulie <psoulie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:49:14 by psoulie           #+#    #+#             */
-/*   Updated: 2025/01/10 11:31:01 by psoulie          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:25:44 by psoulie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	microsort(t_list **a)
 {
 	t_list	*first;
+
 	first = *a;
 	if (first->content > first->next->content)
 		return (sab(a, 'a'));
@@ -27,14 +28,18 @@ void	minisort(t_list **a)
 	t_list	*third;
 
 	first = *a;
+	if (!first->next)
+		return ;
 	second = first->next;
 	if (second->next)
 	{
 		third = second->next;
 		third->next = NULL;
-		if (first->content > second->content && first->content >= third->content)
+		if (first->content > second->content
+			&& first->content >= third->content)
 			rab(a, 'a');
-		else if (second->content >= first->content && second->content > third->content)
+		else if (second->content >= first->content
+			&& second->content > third->content)
 			rrab(a, 'a');
 	}
 	return (microsort(a));
